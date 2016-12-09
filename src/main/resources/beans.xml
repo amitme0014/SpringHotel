@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="guest1" class="org.cuatrovientos.spring.Guest">
+		<property name="name" value="Name 1" />
+		<property name="dni" value="Dni 1" />
+	</bean>
+	
+	<bean id="guest2" class="org.cuatrovientos.spring.Guest">
+		<property name="name" value="Name 2" />
+		<property name="dni" value="Dni 2" />
+	</bean>
+	
+	<bean id="guest3" class="org.cuatrovientos.spring.Guest">
+		<property name="name" value="Name 3" />
+		<property name="dni" value="Dni 3" />
+	</bean>
+	
+	<bean id="room1" class="org.cuatrovientos.spring.Room" p:number="#{1}" p:type="type1" p:description="desc1" p:guest-ref="guest1">
+	</bean>
+	
+	<bean id="room2" class="org.cuatrovientos.spring.Room" p:number="#{2}" p:type="type2" p:description="desc2" p:guest-ref="guest2">
+	</bean>
+	
+	<bean id="room3" class="org.cuatrovientos.spring.Room" p:number="#{3}" p:type="type3" p:description="desc3" p:guest-ref="guest3">
+	</bean>
+	
+	<bean id="room4" class="org.cuatrovientos.spring.Room" p:number="#{4}" p:type="type4" p:description="desc4" p:guest="#{null}">
+	</bean>
+	
+	<bean id="room5" class="org.cuatrovientos.spring.Room" p:number="#{5}" p:type="type5" p:description="desc5" p:guest="#{null}">
+	</bean>
+	
+	<bean id="hotel" class="org.cuatrovientos.spring.Hotel">
+		<property name="name" value="Hotel" />		
+		<property name="rooms">
+			<set>
+				<ref bean="room1" />
+				<ref bean="room2" />
+				<ref bean="room3" />
+				<ref bean="room4" />
+				<ref bean="room5" />
+			</set>
+		</property>
+		
+	</bean>
+
+</beans>
