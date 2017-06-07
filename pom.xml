@@ -3,6 +3,7 @@
   <groupId>org.springframework.samples</groupId>
   <artifactId>springHotel</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+<packaging>WAR</packaging>
   
   <properties>
 
